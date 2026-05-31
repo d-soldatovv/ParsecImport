@@ -1,0 +1,7 @@
+{
+  "host_addr": "10.53.15.1",
+  "organization": "SYSTEM",
+  "username": "parsec",
+  "password": "parsec",
+  "integrational_service_url_path_template": "http://{}:10101/IntegrationService/IntegrationService.asmx?WSDL"
+}

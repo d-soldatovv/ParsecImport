@@ -1,0 +1,16 @@
+=== Параметры запуска ===
+Период действия карт (поле 'Временный'): с 21.12.2027 по 22.12.2027
+
+=== Статистика ===
+Всего файлов обработано: 3
+Новых пользователей создано: 0
+Дубликатов (в 'Временный' уже есть такой ФИО): 1
+Пропущено (ошибки ФИО и т.п.): 0
+Ошибок обработки: 2
+
+=== Дубликаты ===
+Группа: 3094, ФИО: Тестовый Тест Тестович, файл: C:\Users\d.soldatov\Desktop\python_event_callback\Новгу\Политех\3094\Студент\Тестовый Тест Тестович.png, записей в 'Временный': 1, IDs: 2636d226-8f7d-4996-8357-b562cd4416b8
+
+=== Ошибки ===
+[PROCESS] Тестовик Тест Тестович (C:\Users\d.soldatov\Desktop\python_event_callback\Новгу\Политех\3093\Студент\Тестовик Тест Тестович.jpg) : Missing element ACCGROUP_ID (AddPersonIdentifier.identifier.ACCGROUP_ID)
+[PROCESS] Тестовый Тест Тестович (C:\Users\d.soldatov\Desktop\python_event_callback\Новгу\Политех\3093\Студент\Тестовый Тест Тестович.png) : Missing element ACCGROUP_ID (AddPersonIdentifier.identifier.ACCGROUP_ID)

@@ -1,0 +1,30 @@
+=== Параметры запуска ===
+Период действия карт (поле 'Временный'): с - по -
+Группа доступа для карт: Проход по лицу (холл и кластеры) [acd40f4c-91f8-409f-825f-dd8553af03f2]
+
+=== Статистика ===
+Всего файлов обработано: 15
+Новых пользователей создано: 0
+Дубликатов (в 'Временный' уже есть такой ФИО): 0
+Пропущено (ошибки ФИО и т.п.): 0
+Ошибок обработки: 15
+
+=== Дубликаты ===
+Нет дубликатов.
+
+=== Ошибки ===
+[PROCESS] Петляков Константин Антонович (C:\Users\d.soldatov\Desktop\python_event_callback\Новгу\Политех\3983\Студент\Петляков Константин Антонович.jpg) : Missing element VALID_FROM (AddPersonIdentifier.identifier.VALID_FROM)
+[PROCESS] Ефремов Иван (C:\Users\d.soldatov\Desktop\python_event_callback\Новгу\Политех\5094\Студент\Ефремов Иван.jpg) : Missing element VALID_FROM (AddPersonIdentifier.identifier.VALID_FROM)
+[PROCESS] Левин Владислав (C:\Users\d.soldatov\Desktop\python_event_callback\Новгу\Политех\5094\Студент\Левин Владислав.jpg) : Missing element VALID_FROM (AddPersonIdentifier.identifier.VALID_FROM)
+[PROCESS] Нефедова Наталья (C:\Users\d.soldatov\Desktop\python_event_callback\Новгу\Политех\5094\Студент\Нефедова Наталья.jpg) : Missing element VALID_FROM (AddPersonIdentifier.identifier.VALID_FROM)
+[PROCESS] Павленко Владимир (C:\Users\d.soldatov\Desktop\python_event_callback\Новгу\Политех\5094\Студент\Павленко Владимир.jpg) : Missing element VALID_FROM (AddPersonIdentifier.identifier.VALID_FROM)
+[PROCESS] Смирнова Светлана (C:\Users\d.soldatov\Desktop\python_event_callback\Новгу\Политех\5094\Студент\Смирнова Светлана.jpg) : Missing element VALID_FROM (AddPersonIdentifier.identifier.VALID_FROM)
+[PROCESS] Ярош Антон (C:\Users\d.soldatov\Desktop\python_event_callback\Новгу\Политех\5094\Студент\Ярош Антон.jpg) : Missing element VALID_FROM (AddPersonIdentifier.identifier.VALID_FROM)
+[PROCESS] Варухин Николай Аркадьевич (C:\Users\d.soldatov\Desktop\python_event_callback\Новгу\Политех\Проектная группа\Варухин Николай Аркадьевич.jpg) : Missing element VALID_FROM (AddPersonIdentifier.identifier.VALID_FROM)
+[PROCESS] Григорьева Дарья Дмитриевна (C:\Users\d.soldatov\Desktop\python_event_callback\Новгу\Политех\Проектная группа\Григорьева Дарья Дмитриевна.jpg) : Missing element VALID_FROM (AddPersonIdentifier.identifier.VALID_FROM)
+[PROCESS] Енбаев Владислав Алексеевич (C:\Users\d.soldatov\Desktop\python_event_callback\Новгу\Политех\Проектная группа\Енбаев Владислав Алексеевич.jpg) : Missing element VALID_FROM (AddPersonIdentifier.identifier.VALID_FROM)
+[PROCESS] Курбанов Сергей Владимирович (C:\Users\d.soldatov\Desktop\python_event_callback\Новгу\Политех\Проектная группа\Курбанов Сергей Владимирович.jpg) : Missing element VALID_FROM (AddPersonIdentifier.identifier.VALID_FROM)
+[PROCESS] Максимова Алёна Борисовна (C:\Users\d.soldatov\Desktop\python_event_callback\Новгу\Политех\Проектная группа\Максимова Алёна Борисовна.jpg) : Missing element VALID_FROM (AddPersonIdentifier.identifier.VALID_FROM)
+[PROCESS] Пелевина Карина Денисовна (C:\Users\d.soldatov\Desktop\python_event_callback\Новгу\Политех\Проектная группа\Пелевина Карина Денисовна.jpg) : Missing element VALID_FROM (AddPersonIdentifier.identifier.VALID_FROM)
+[PROCESS] Романов Дмитрий Александрович (C:\Users\d.soldatov\Desktop\python_event_callback\Новгу\Политех\Проектная группа\Романов Дмитрий Александрович.jpg) : Missing element VALID_FROM (AddPersonIdentifier.identifier.VALID_FROM)
+[PROCESS] Уханова Софья Александровна (C:\Users\d.soldatov\Desktop\python_event_callback\Новгу\Политех\Проектная группа\Уханова Софья Александровна.jpg) : Missing element VALID_FROM (AddPersonIdentifier.identifier.VALID_FROM)
