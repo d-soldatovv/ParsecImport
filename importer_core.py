@@ -26,11 +26,7 @@ class PhotoTask:
 
 
 def scan_photo_files(base_root: Path) -> list[PhotoTask]:
-    """
-    Поддерживает:
-      1) .../<группа>/Студент/*.jpg
-      2) .../<группа>/*.jpg  (fallback)
-    """
+
     tasks: list[PhotoTask] = []
     if not base_root.is_dir():
         return tasks
@@ -63,9 +59,7 @@ def check_connection(config_path: Path) -> tuple[bool, str]:
 
 
 def load_access_groups(config_path: Path) -> list[dict]:
-    """
-    Возвращает: [{"ID": "...", "NAME": "..."}]
-    """
+
     cfg = ConnectionConfig(str(config_path))
     session = IntegrationalServiceSession(cfg)
     groups = get_access_groups(session)
