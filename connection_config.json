@@ -1,5 +1,5 @@
 {
-  "host_addr": "10.53.15.1",
+  "host_addr": "*.*.*.*",
   "organization": "SYSTEM",
   "username": "parsec",
   "password": "parsec",
