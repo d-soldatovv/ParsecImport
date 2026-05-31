@@ -18,7 +18,7 @@ from importer_core import run_import, scan_photo_files, check_connection, load_a
 
 class ImportWorker(QObject):
     log = Signal(str)
-    progress = Signal(int, int, str, str)   # current, total, file, fio
+    progress = Signal(int, int, str, str)   
     finished = Signal(dict)
     failed = Signal(str)
 
@@ -74,7 +74,7 @@ class ConnWorker(QObject):
 
 
 class GroupsWorker(QObject):
-    finished = Signal(list)   # list of {"ID","NAME"}
+    finished = Signal(list)  
     failed = Signal(str)
 
     def __init__(self, config_path: Path):
@@ -278,7 +278,6 @@ class App(QWidget):
         self.btn_reload_groups.setEnabled(False)
         self.group_combo.setEnabled(False)
 
-        # запоминаем выбранную группу до обновления
         self._prev_group_id = self.group_combo.currentData()
 
         self.groups_thread = QThread()
@@ -287,7 +286,6 @@ class App(QWidget):
 
         self.groups_thread.started.connect(self.groups_worker.run)
 
-        # ВАЖНО: подключаем к слотам App (QObject), без lambda
         self.groups_worker.finished.connect(self.on_groups_loaded, Qt.QueuedConnection)
         self.groups_worker.failed.connect(self.on_groups_failed, Qt.QueuedConnection)
 
@@ -310,7 +308,6 @@ class App(QWidget):
         for g in groups:
             self.group_combo.addItem(g["NAME"], g["ID"])
 
-        # восстановим прошлый выбор
         if prev_id:
             for i in range(self.group_combo.count()):
                 if self.group_combo.itemData(i) == prev_id:
@@ -343,7 +340,6 @@ class App(QWidget):
             valid_from = datetime.combine(self.date_from.date().toPython(), datetime.min.time())
             valid_to = datetime.combine(self.date_to.date().toPython(), datetime.min.time())
 
-        # UI reset
         self.set_busy(True)
         self.btn_open_report.setEnabled(False)
         self.btn_open_logs.setEnabled(False)
@@ -361,7 +357,6 @@ class App(QWidget):
         self.tabs.setCurrentWidget(self.log_view)
         self.append_log("Запуск импорта...")
 
-        # thread/worker
         self.import_thread = QThread()
         self.import_worker = ImportWorker(
             base_root=base_root,
