@@ -108,7 +108,6 @@ def create_person(session: IntegrationalServiceSession,
     return str(res.Value)
 
 
-# ---------- ГРУППЫ ДОСТУПА ----------
 
 def get_access_groups(session: IntegrationalServiceSession):
     raw = session.GetAccessGroups(session.sessionId)
@@ -121,20 +120,13 @@ def get_access_groups(session: IntegrationalServiceSession):
     return []
 
 
-# ---------- КАРТЫ / ИДЕНТИФИКАТОРЫ ----------
 
 def add_card_identifier(session: IntegrationalServiceSession,
                         person_id: str,
                         access_group_id: str | None,
                         valid_from: datetime | None,
                         valid_to: datetime | None) -> str:
-    """
-    Если access_group_id задан — создаём StockIdentifier и назначаем группу доступа.
-    В вашей системе VALID_FROM обязателен:
-      - если valid_from None -> datetime.now()
-      - если valid_to None -> 2099-12-31
-    Если access_group_id не задан — BaseIdentifier (без группы).
-    """
+  
     code_res = session.GetUnique4bCardCode(session.sessionId)
     if code_res.Result != 0:
         raise RuntimeError(f"GetUnique4bCardCode error: {code_res.ErrorMessage}")
@@ -188,14 +180,12 @@ def add_card_identifier(session: IntegrationalServiceSession,
     return card_code
 
 
-# ---------- ФОТО + EMAIL ----------
 
 def set_photo_and_email_for_person(session: IntegrationalServiceSession,
                                    person_id: str,
                                    email_template_id: str | None,
                                    email_value: str | None,
                                    photo_bytes: bytes):
-    # Фото
     edit_res1 = session.OpenPersonEditingSession(session.sessionId, person_id)
     if edit_res1.Result != 0:
         raise RuntimeError(f"OpenPersonEditingSession (photo) error: {edit_res1.ErrorMessage}")
@@ -208,7 +198,6 @@ def set_photo_and_email_for_person(session: IntegrationalServiceSession,
     finally:
         session.ClosePersonEditingSession(edit_session_id1)
 
-    # Email
     if email_template_id and email_value:
         edit_res2 = session.OpenPersonEditingSession(session.sessionId, person_id)
         if edit_res2.Result != 0:
@@ -224,7 +213,6 @@ def set_photo_and_email_for_person(session: IntegrationalServiceSession,
             session.ClosePersonEditingSession(edit_session_id2)
 
 
-# ---------- ОБРАБОТКА ФАЙЛА ----------
 
 def process_student_file(session: IntegrationalServiceSession,
                          PersonType,
@@ -261,7 +249,6 @@ def process_student_file(session: IntegrationalServiceSession,
         errors.append(f"[READ_PHOTO] {fio_str} ({path}) : {e}")
         return
 
-    # Если уже есть в 'Временный' — дубликат
     if persons_temp:
         stats["duplicates"] += 1
         duplicates.append({
@@ -273,7 +260,6 @@ def process_student_file(session: IntegrationalServiceSession,
         })
         return
 
-    # Создаём нового
     person_id = None
     try:
         person_id = create_person(
@@ -297,7 +283,6 @@ def process_student_file(session: IntegrationalServiceSession,
         stats["errors"] += 1
         errors.append(f"[PROCESS] {fio_str} ({path}) : {e}")
 
-        # попытка отката (если метод есть)
         if person_id and hasattr(session, "DeletePerson"):
             try:
                 session.DeletePerson(session.sessionId, person_id)
@@ -305,7 +290,6 @@ def process_student_file(session: IntegrationalServiceSession,
                 pass
 
 
-# ---------- ЛОГИ ----------
 
 def write_log(script_dir: Path,
               stats: dict,
