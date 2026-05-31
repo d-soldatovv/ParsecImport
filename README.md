@@ -1,5 +1,3 @@
----
-
 # Руководство пользователя [ParsecImport (Automated Parsec Student Photo Import Tool)]
 
 **## Аннотация**
